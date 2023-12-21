@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from keras.models import load_model
+from keras
 
 st.write("# Advertising Sales Predictor App")
 st.write("This app predicts the **Sales** of Different Media!")

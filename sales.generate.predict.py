@@ -3,14 +3,14 @@ import pandas as pd
 import seaborn as sns
 
 st.write("# Advertising Sales Predictor App")
-st.write("This app predicts the **Sales** of Media Type!")
+st.write("This app predicts the **Sales** of Different Media!")
 
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    sepal_length = st.sidebar.slider('Tv', 0.7, 296.4, 100.0)
-    sepal_width = st.sidebar.slider('Radio', 0.0, 49.6, 25.0)
-    petal_length = st.sidebar.slider('Newspaper', 0.3, 114.0, 60.0)
+    Tv = st.sidebar.slider('Tv', 0.7, 296.4, 100.0)
+    Radio = st.sidebar.slider('Radio', 0.0, 49.6, 25.0)
+    Newspaper = st.sidebar.slider('Newspaper', 0.3, 114.0, 60.0)
     data = {'Tv': Tv,
             'Radio': Radio,
             'Newspaper': Newspaper}

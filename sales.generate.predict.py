@@ -20,10 +20,9 @@ def user_input_features():
 
 df = user_input_features()
 
-pickle.load(open("Sales-Model-ARNN-Project-V3.h5", "rb")
+st.subheader('User Input Parameter')
+st.write(df)
 
-st.subheader('Prediction')
-st.write(prediction)
+#prediction = pickle.load(open("Sales-Model-ARNN-Project-V3.h5", "rb")
+                         
 
-st.subheader('Prediction Probability')
-st.write(prediction_proba)

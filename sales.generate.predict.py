@@ -33,3 +33,6 @@ prediction_proba = loaded_model.predict_proba(df)
 
 st.subheader('Prediction')
 st.write(prediction)
+
+st.subheader('Prediction Probability')
+st.write(prediction_proba)

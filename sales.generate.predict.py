@@ -37,7 +37,7 @@ try:
     prediction = loaded_model.predict(input_data)
 
 st.subheader('Prediction')
-    st.write(prediction)
+st.write(prediction)
 
 except FileNotFoundError:
     st.error(f"Model file '{file_path}' not found. Please make sure the file exists.")

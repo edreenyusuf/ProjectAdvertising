@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
 import pickle
 
 st.write("# Advertising Sales Predictor App")
@@ -14,7 +13,7 @@ def user_input_features():
     Newspaper = st.sidebar.slider('Newspaper', 0.3, 114.0, 60.0)
     data = {'TV': TV,
             'Radio': Radio,
-            'Newspaper': Newspaper}
+            'Newspaper': Newspaper,}
     return data
 
 df = user_input_features()

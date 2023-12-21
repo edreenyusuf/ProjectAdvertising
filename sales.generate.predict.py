@@ -36,10 +36,11 @@ try:
     
     prediction = loaded_model.predict(input_data)
 
-st.subheader('Prediction')
-st.write(prediction)
 
 except FileNotFoundError:
     st.error(f"Model file '{file_path}' not found. Please make sure the file exists.")
 except Exception as e:
     st.error(f"An error occurred: {e}")
+
+st.subheader('Prediction')
+st.write(prediction)

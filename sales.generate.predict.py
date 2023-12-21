@@ -27,7 +27,7 @@ st.write(df)
 #model = pickle.load(open("Sales-Model-ARNN-Project-V3.h5","rb)
 loaded_model = pickle.load(open("Sales-Model-ARNN-Project-V3.h5", "rb"))
 
-#prediction = loaded_model.predict(df)
+prediction = loaded_model.predict(df)
 
-#st.subheader('Prediction')
-#st.write(prediction)
+st.subheader('Prediction')
+st.write(prediction)

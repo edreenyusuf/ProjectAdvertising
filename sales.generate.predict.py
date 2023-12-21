@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import tensorflow
 from keras.models import load_model
 
 st.write("# Advertising Sales Predictor App")

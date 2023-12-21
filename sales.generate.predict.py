@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import seaborn as sns
+import pickle
 
 st.write("# Advertising Sales Predictor App")
 st.write("This app predicts the **Sales** of Different Media!")
@@ -18,6 +19,8 @@ def user_input_features():
     return features
 
 df = user_input_features()
+
+pickle.load(open("Sales-Model-ARNN-Project-V3.h5", "rb")
 
 st.subheader('Prediction')
 st.write(prediction)

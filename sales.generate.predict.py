@@ -25,7 +25,7 @@ st.write(df)
 file_path = "Sales-Model-ARNN-Project-V3.h5"
 
 try:
-    loaded_model = load_model(file_path)
+    loaded_model = load_model("Sales-Model-ARNN-Project-V3.h5")
 
     input_data = pd.DataFrame(df, index=[0])
     

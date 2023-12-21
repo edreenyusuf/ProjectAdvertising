@@ -27,7 +27,6 @@ file_path = "Sales-Model-ARNN-Project-V3.h5"
 try:
     loaded_model = load_model(file_path)
 
-  
     input_data = pd.DataFrame(df, index=[0])
     
     input_data['MissingFeature'] = 0 

@@ -27,20 +27,19 @@ st.write(df)
 file_path = "Sales-Model-ARNN-Project-V3.h5"
 
 try:
-    with open(file_path, "rb") as file:
-        loaded_model = pickle.load(file)
+    loaded_model = load_model(file_path)
 
   
     input_data = pd.DataFrame(df, index=[0])
     
     input_data['MissingFeature'] = 0 
     
-    prediction = loaded_model.predict(input_data.values)
+    prediction = loaded_model.predict(input_data)
 
 st.subheader('Prediction')
-st.write(prediction)
+    st.write(prediction)
 
 except FileNotFoundError:
-    st.error("Model file "Sales-Model-ARNN-Project-V3.h5" not found. Please make sure the file exists.")
+    st.error(f"Model file '{file_path}' not found. Please make sure the file exists.")
 except Exception as e:
     st.error(f"An error occurred: {e}")

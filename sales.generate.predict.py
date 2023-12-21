@@ -21,7 +21,7 @@ def user_input_features():
 
 df = user_input_features()
 
-st.subheader('User Input Parameter')
+st.subheader('User Input Parameters')
 st.write(df)
 
 #model = pickle.load(open("Sales-Model-ARNN-Project-V3.h5","rb)

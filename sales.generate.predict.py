@@ -21,7 +21,7 @@ df = user_input_features()
 
 
 st.subheader('Class labels and their corresponding index number')
-st.write(Y.unique())
+st.write(unique())
 
 st.subheader('Prediction')
 st.write(prediction)

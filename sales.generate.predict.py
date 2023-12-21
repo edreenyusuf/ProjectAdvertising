@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import numpy
 
 st.write("# Advertising Sales Predictor App")
 st.write("This app predicts the **Sales** of Different Media!")
@@ -21,23 +22,9 @@ df = user_input_features()
 st.subheader('User Input Parameter')
 st.write(df)
 
+loaded_model = pickle.load(open("Sales-Model-ARNN-Project-V3.h5", "rb")
 
-file_path = "Sales-Model-ARNN-Project-V3.h5"
-
-try:
-    loaded_model = load_model("Sales-Model-ARNN-Project-V3.h5")
-
-    input_data = pd.DataFrame(df, index=[0])
-    
-    input_data['MissingFeature'] = 0 
-    
-    prediction = loaded_model.predict(input_data)
-
-
-except FileNotFoundError:
-    st.error(f"Model file '{file_path}' not found. Please make sure the file exists.")
-except Exception as e:
-    st.error(f"An error occurred: {e}")
+prediction = loaded_model.predict(df)
 
 st.subheader('Prediction')
 st.write(prediction)

@@ -23,10 +23,9 @@ df = user_input_features()
 st.subheader('User Input Parameter')
 st.write(df)
 
-prediction = pickle.load(open("Sales-Model-ARNN-Project-V3.h5", "rb")
-new_pred = prediction.predict(X_test)
-dfnew_pred = pd.DataFrame({'Actual': y_test, 'Predicted': new_pred})
-dfnew_pred                         
+loaded_model = pickle.load(open("Sales-Model-ARNN-Project-V3.h5", "rb")
+new_pred = loaded_model.predict(X_test)
+dfnew_pred = pd.df({'Actual': y_test, 'Predicted': new_pred})                       
                          
 st.subheader('Prediction')
 st.write(dfnew_pred)

@@ -15,17 +15,31 @@ def user_input_features():
     data = {'TV': TV,
             'Radio': Radio,
             'Newspaper': Newspaper}
-    features = pd.DataFrame(data, index=[0])
-    return features
+    return data
 
 df = user_input_features()
 
 st.subheader('User Input Parameter')
 st.write(df)
 
-loaded_model = pickle.load(open("Sales-Model-ARNN-Project-V3.h5", "rb")
-new_pred = loaded_model.predict(X_test)
-dfnew_pred = pd.df({'Actual': y_test, 'Predicted': new_pred})                       
-                         
+
+file_path = "Sales-Model-ARNN-Project-V3.h5"
+
+try:
+    with open(file_path, "rb") as file:
+        loaded_model = pickle.load(file)
+
+  
+    input_data = pd.DataFrame(df, index=[0])
+    
+    input_data['MissingFeature'] = 0 
+    
+    prediction = loaded_model.predict(input_data.values)
+
 st.subheader('Prediction')
-st.write(dfnew_pred)
+st.write(prediction)
+
+except FileNotFoundError:
+    st.error("Model file "Sales-Model-ARNN-Project-V3.h5" not found. Please make sure the file exists.")
+except Exception as e:
+    st.error(f"An error occurred: {e}")

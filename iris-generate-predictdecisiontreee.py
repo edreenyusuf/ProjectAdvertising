@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import pickle
-from sklearn.tree import plot_tree
+import sklearn
+#from sklearn.tree import plot_tree
 
 st.write("# Simple Iris Flower Prediction App")
 st.write("This app predicts the **Iris flower** type!")

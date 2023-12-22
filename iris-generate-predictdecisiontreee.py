@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import pickle
-from sklearn.tree import plot_tree
+#from sklearn.tree import plot_tree
 
 st.write("# Simple Iris Flower Prediction App")
 st.write("This app predicts the **Iris flower** type!")
@@ -26,10 +26,10 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-modeldt = pickle.load(open("irisdt.h5", "rb")) #rb: read binary
+modeldt = pickle.load(open("irisdt.h5", "rb")) 
 
 prediction = modeldt.predict(df)
-prediction_proba = modeldt.predict_proba(df)
+#prediction_proba = modeldt.predict_proba(df)
 
 st.subheader('Prediction')
 st.write(prediction)

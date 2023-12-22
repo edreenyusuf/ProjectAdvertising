@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy
+from sk.learn import plot_tree
 
 st.write("# Simple Iris Flower Prediction App")
 st.write("This app predicts the **Iris flower** type!")
@@ -16,7 +17,7 @@ def user_input_features():
     data = {'sepal_length': sepal_length,
             'sepal_width': sepal_width,
             'petal_length': petal_length,
-            'petal_width': petal_width,}
+            'petal_width': petal_width}
     features = pd.DataFrame(data, index=[0])
     return features
 
@@ -25,7 +26,7 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-modeldt = pickle.load(open("iris.h5", "rb")) 
+modeldt = pickle.load(open("irisdt.h5", "rb")) 
 
 prediction = modeldt.predict(df)
 #prediction_proba = modeldt.predict_proba(df)

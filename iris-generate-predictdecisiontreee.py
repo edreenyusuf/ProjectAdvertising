@@ -16,7 +16,7 @@ def user_input_features():
     data = {'sepal_length': sepal_length,
             'sepal_width': sepal_width,
             'petal_length': petal_length,
-            'petal_width': petal_width}
+            'petal_width': petal_width,}
     features = pd.DataFrame(data, index=[0])
     return features
 
@@ -25,7 +25,7 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-modeldt = pickle.load(open("Irisdtexp.h5", "rb")) 
+modeldt = pickle.load(open("iris.h5", "rb")) 
 
 prediction = modeldt.predict(df)
 #prediction_proba = modeldt.predict_proba(df)

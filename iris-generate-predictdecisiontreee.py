@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
 import pickle
 import numpy
-from sklearn.tree import plot_tree
 
 st.write("# Simple Iris Flower Prediction App")
 st.write("This app predicts the **Iris flower** type!")
@@ -19,8 +17,8 @@ def user_input_features():
             'sepal_width': sepal_width,
             'petal_length': petal_length,
             'petal_width': petal_width}
-    data = pd.DataFrame(data, index=[0])
-    return data
+    features = pd.DataFrame(data, index=[0])
+    return features
 
 df = user_input_features()
 
